@@ -64,10 +64,3 @@ pip install pandas numpy scikit-learn
    jupyter notebook "Fraud Transaction Detection.ipynb"
    ```
 3. Run the cells in order to reproduce cleaning, feature engineering, balanced sampling, and model evaluation.
-
-## Notes & Limitations
-
-* Every training run achieves 100% accuracy on its own balanced sample, which suggests the Random Forest is overfitting to that specific sample rather than perfectly separating the classes in general — the full-train and test scores (~96%) are the more meaningful numbers.
-* `cards` and `users` datasets could not be joined to the transaction data (no shared primary key), so potentially useful features (chip presence, dark-web status, out-of-state transactions) were not incorporated.
-* No hyperparameter tuning was performed on the `RandomForestClassifier` — default settings are used throughout.
-* Given the ~0.12% fraud rate, accuracy alone can be misleading; precision, recall, and F1 on the minority (fraud) class would give a fuller picture of model quality.
